@@ -2,19 +2,22 @@
   <h2>Articles:</h2>
   <table>
     <tr>
-      <th class="col-sm-3">Title</th>
-      <th class="col-sm-6">Content</th>
-      <th class="col-sm-2"></th>
+      <th class="col-lg-2"><h4>Title</h4></th>
+      <th class="col-lg-8"><h4>Content</h4></th>
+      <th>&emsp;</th>
     </tr>
  
     <% @articles.each do |article| %>
+      <tr><td>&emsp;</td></tr>
       <tr>
-        <td class="col-sm-3"><h6><%= article.title %></h6></td>
-        <td class="col-sm-6"><%= article.text %></td>
-        <td class="btn-group col-sm-2">
-          <%= link_to '<button type="button" class="btn btn-info">Show</button>'.html_safe, article_path(article) %>
-          <%= link_to '<button type="button" class="btn btn-warning">Edit</button>'.html_safe, edit_article_path(article) %>
-          <%= link_to '<button type="button" class="btn btn-danger">Delete</button>'.html_safe, article_path(article),
+        <td class="col-lg-2"><h6><%= article.title %></h6></td>
+        <td class="col-lg-8"><%= article.text %></td>
+        <td class="btn-group btn-group-justified">
+          <%= link_to 'Show', article_path(article), type: :button, :class => 'btn btn-info' %>
+          <%= link_to 'Edit', edit_article_path(article), type: :button, :class => 'btn btn-outline-primary'%>
+          <%= link_to 'Delete', article_path(article),
+                    type: :button,
+                    :class => 'btn btn-danger',
                     method: :delete,
                     data: { confirm: 'Are you sure?' } %>
   
@@ -22,5 +25,5 @@
       </tr>
     <% end %>
   </table><br><br>
-  <%= link_to '<button type="button" class="btn btn-primary col-sm-4"><h5>New article</h5></button>'.html_safe, new_article_path %>
+  <%= link_to '<h5>New article</h5>'.html_safe, new_article_path, type: :button, :class => 'btn btn-primary btn-block' %>
 </div>

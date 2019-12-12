@@ -6,12 +6,14 @@
 	</tr>
 	<tr> </tr>
 	<tr>
-		<td class="text-justified"><pre>  </pre><%= @article.text %></td>
+		<td class="text-justified">&emsp;<%= @article.text %></td>
 	</tr>
   </table>
   <br><br><br>
-  <%= link_to '<button type="button" class="btn btn-info" >Index</button>'.html_safe, articles_path %>
-  <%= link_to '<button type="button" class="btn btn-danger" >Delete</button>'.html_safe, article_path(@article),
+  <%= link_to 'Back', articles_path, type: :button, :class => 'btn btn-dark' %>
+  <%= link_to 'Delete', article_path(@article),
+  				  type: :button,
+  				  :class => 'btn btn-danger',
   	              method: :delete,
                   data: { confirm: 'Are you sure?' } %>
 </div>

@@ -12,20 +12,19 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> 
+    <p id="title">
+      <%= form.label :title %>&emsp;
+      <%= form.text_field :title, :class => 'col-lg-6', :style => 'text-align: center;' %>
+    </p>
  
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+    <p>
+      <%= form.label :content %><br>
+      <%= form.text_area :text, :class => 'col-lg-12', :rows => '5' %>
+    </p>
  
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
- 
+    <p>
+      <%= form.submit "save", :class => 'btn btn-success' %>
+      <%= link_to 'Cancel', articles_path, :type => 'button', :class => 'btn btn-danger' %>
+    </p>
 <% end %>
