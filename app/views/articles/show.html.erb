@@ -1,19 +1,19 @@
-<div class="container">
-  <table class="col-lg-12">
-	<tr> </tr>
-	<tr>
-		<td ><h2 class="text-center"><%= @article.title %></h2></td>
-	</tr>
-	<tr> </tr>
-	<tr>
-		<td class="text-justified">&emsp;<%= @article.text %></td>
-	</tr>
-  </table>
-  <br><br><br>
-  <%= link_to 'Back', articles_path, type: :button, :class => 'btn btn-dark' %>
-  <%= link_to 'Delete', article_path(@article),
-  				  type: :button,
-  				  :class => 'btn btn-danger',
-  	              method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-</div>
+<table class="table">
+<tr> </tr>
+<tr>
+	<td ><h2 class="text-center"><%= @article.title %></h2></td>
+</tr>
+<tr>
+	<td class="text-justified">&emsp;<%= @article.text %></td>
+</tr>
+<tr>
+	<td>Author:&emsp;<%= @article.user.username %></td>
+</tr>
+</table>
+<br><br><br>
+<%= link_to 'Back', articles_path, type: :button, :class => "btn btn-dark" %>
+<%= link_to 'Delete', article_path(@article),
+				  type: :button,
+				  :class => 'btn btn-danger',
+	              method: :delete,
+                data: { confirm: 'Are you sure?' } %>

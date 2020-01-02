@@ -13,22 +13,28 @@
  */
 
 @import "bootstrap";
+  #title{
+    text-align: center;
+  }
+  
+  .navbar-brand, .nav-link{
+    color: darkgreen;
+  }
 
-.jumbotron{
-	text-align: center;
-	color: white;
-	height: 150px;
-	background-color: green;
-}
-
-#title{
-	text-align: center;
-}
-
-
-.btn-xl {
-    padding: 10px 20px;
+  .navbar-brand{
     font-size: 30px;
-    border-radius: 10px;
-    width:50%;
-}
+  }
+
+  .nav-link:hover{
+  	color: green;
+  	font-size: 20px;
+  }
+
+  .navbar-brand:hover{
+  	color: green;
+  }
+
+  .navbar{
+  	background-color: #f1f1f1;
+  	border-bottom: 3px solid darkgreen;
+  }

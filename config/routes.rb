@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   get 'welcome/index'
 
+  root :to => 'welcome#index'
+
   resources :articles
-  
-  root 'welcome#index'
+
+  get 'articles/myarts'
+
 end
