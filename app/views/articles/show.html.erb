@@ -10,10 +10,17 @@
 	<td>Author:&emsp;<%= @article.user.username %></td>
 </tr>
 </table>
+<br><br>
+
+<% if @article.user == current_user %>
+  <%= link_to 'Edit', edit_article_path(@article), type: :button, :class => 'btn btn-outline-primary'%>
+  <%= link_to 'Back', articles_path, type: :button, :class => "btn btn-dark" %>
+  <%= link_to 'Delete', article_path(@article),
+					    type: :button,
+  					    class: 'btn btn-danger',
+		                method: :delete,
+	                    data: { confirm: 'Are you sure?' } %>
+<% else %>
+  <%= link_to 'Back', articles_path, type: :button, :class => "btn btn-dark" %>
+<% end %>
 <br><br><br>
-<%= link_to 'Back', articles_path, type: :button, :class => "btn btn-dark" %>
-<%= link_to 'Delete', article_path(@article),
-				  type: :button,
-				  :class => 'btn btn-danger',
-	              method: :delete,
-                data: { confirm: 'Are you sure?' } %>

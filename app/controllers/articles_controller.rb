@@ -1,11 +1,12 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
-
-
   def index
     @articles = Article.all
   end
 
+  def my_article
+    @articles = Article.all
+  end
+  
   def show
     @article = Article.find(params[:id])
   end
@@ -16,6 +17,9 @@ class ArticlesController < ApplicationController
  
   def edit
     @article = Article.find(params[:id])
+    if @article.user != current_user
+      access_alert
+    end
   end
  
   def create
@@ -31,14 +35,10 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     
-    if @article.user == current_user
-      if @article.update(article_params)
-        redirect_to @article
-      else
-        render 'edit'
-      end
+    if @article.update(article_params)
+      redirect_to @article
     else
-      access_alert
+      render 'edit'
     end
   end
 

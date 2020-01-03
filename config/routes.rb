@@ -3,10 +3,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  get 'articles/my_article'
+
   root :to => 'welcome#index'
 
   resources :articles
-
-  get 'articles/myarts'
-
 end

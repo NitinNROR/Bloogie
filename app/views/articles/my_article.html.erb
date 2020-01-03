@@ -1,0 +1,30 @@
+<h2>My Articles:</h2>
+<table class="table">
+  <tr>
+    <th><h4>Title</h4></th>
+    <th><h4>Content</h4></th>
+    <th>&emsp;</th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <% if article.user == current_user %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.line %></td>
+      <td>
+        <div class="btn-group btn-group-justified">
+          <%= link_to 'Read', article_path(article), type: :button, :class => 'btn btn-info' %>
+          <%= link_to 'Edit', edit_article_path(article), type: :button, :class => 'btn btn-outline-primary'%>
+          <%= link_to 'Delete', article_path(article),
+                    type: :button,
+                    :class => 'btn btn-danger',
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+        </div>
+      </td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
+<%= link_to '<h5>New article</h5>'.html_safe, new_article_path, type: :button, class: 'btn btn-primary btn-block' %>
+<br><br><br>
