@@ -30,6 +30,11 @@
   	font-size: 20px;
   }
 
+  .username{
+    color: green;
+    font-size: 20px;
+  }
+
   .navbar-brand:hover{
   	color: green;
   }
@@ -37,4 +42,14 @@
   .navbar{
   	background-color: #f1f1f1;
   	border-bottom: 3px solid darkgreen;
+  }
+  
+  .profile-pic{
+    height: 50px;
+    width: 50px;
+  }
+
+  .thumb{
+    height: 30px;
+    width: 30px;
   }
