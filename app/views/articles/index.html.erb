@@ -2,8 +2,8 @@
 <table class="table">
   <tr>
     <th><h4>Title</h4></th>
-    <th><h4>Content</h4></th>
-    <th><h4>Author</h4></th>
+    <th style="text-align: center;"><h4>Content</h4></th>
+    <th colspan="2" style="text-align: center;"><h4>Author</h4></th>
     <th>&emsp;</th>
   </tr>
 
@@ -11,9 +11,14 @@
     <tr>
       <td><h6><%= article.title %></h6></td>
       <td><%= article.line %></td>
+      <td>
+        <% if article.user.avatar.attached? %>
+          <%= image_tag article.user.avatar, class: 'rounded-circle thumb' %>
+        <% end %>  
+      </td>
       <td><%= article.user.username %></td>
-      <td> <!--class="btn-group btn-group-justified"-->
-          <%= link_to 'Read', article_path(article), type: :button, :class => "btn btn-info" %>
+      <td>
+          <%= link_to 'Read', article_path(article), type: :button, class: 'btn btn-info' %>
       </td>
     </tr>
   <% end %>

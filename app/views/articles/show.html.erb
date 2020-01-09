@@ -7,7 +7,13 @@
 	<td class="text-justified">&emsp;<%= @article.text %></td>
 </tr>
 <tr>
-	<td>Author:&emsp;<%= @article.user.username %></td>
+	<td>
+		Author:&emsp;
+		<% if @article.user.avatar.attached? %>
+			<%= image_tag @article.user.avatar, class: 'rounded-circle thumb' %>
+		<% end %>
+		<%= @article.user.username %>
+	</td>
 </tr>
 </table>
 <br><br>
