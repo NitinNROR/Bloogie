@@ -12,6 +12,8 @@ gem 'jquery-rails'
 #devise
 gem 'devise'
 
+#activeadmin
+gem 'activeadmin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
